@@ -26,7 +26,7 @@ export default function CreateTenant() {
     };
 
     try {
-      const response = await fetch("http://ec2-3-91-217-18.compute-1.amazonaws.com:8000/tenant/create/", {
+      const response = await fetch("/api/tenant/create/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
