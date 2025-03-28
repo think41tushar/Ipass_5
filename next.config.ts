@@ -10,12 +10,12 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Add a rewrite to proxy HTTP backend requests through Next.js
+  // Add a rewrite to proxy backend requests through Next.js
   async rewrites() {
     return [
       {
         source: "/api/:path*", // Match API routes
-        destination: "https://ec2-3-91-217-18.compute-1.amazonaws.com:8000/:path*", // Use HTTPS backend
+        destination: "http://ec2-3-91-217-18.compute-1.amazonaws.com:8000/:path*", // Use HTTPS if available
       },
     ];
   },
@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Access-Control-Allow-Methods",
-            value: "GET,POST,PUT,DELETE,OPTIONS",
+            value: "GET, POST, PUT, DELETE, OPTIONS",
           },
           {
             key: "Access-Control-Allow-Headers",
@@ -45,4 +45,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
 
