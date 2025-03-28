@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/:path*", // Match API routes
-        destination: "http://ec2-3-91-217-18.compute-1.amazonaws.com:8000/:path*", // Use HTTPS if available
+        destination: "https://syncdjango.site/:path*", // Use HTTPS if available
       },
     ];
   },
